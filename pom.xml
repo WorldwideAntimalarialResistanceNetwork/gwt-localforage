@@ -7,8 +7,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>us.storee.gwt</groupId>
     <artifactId>gwt-localForage</artifactId>
+    <version>1.2.3-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
     <name>GWT LocalForage Wrapper</name>
 
     <properties>
@@ -62,6 +62,22 @@
         <!-- Output classes directly into the webapp, so that IDEs and "mvn process-classes" update them in DevMode -->
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
 
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.java</include>
+                    <include>**/*.gwt.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*.css</include>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
 
             <!-- GWT Maven Plugin -->
@@ -109,22 +125,6 @@
             </plugin>
 
         </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.java</include>
-                    <include>**/*.gwt.xml</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>*.css</include>
-                    <include>**/*.*</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 
 </project>
